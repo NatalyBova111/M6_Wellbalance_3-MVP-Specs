@@ -1,0 +1,75 @@
+erDiagram
+  auth_users ||--|| profiles : "1-1 (via id)"
+  profiles ||--o{ daily_logs : has
+  profiles ||--o{ meals : has
+  profiles ||--o{ water_intake : has
+  profiles ||--o{ sleep_logs : has
+  meals ||--o{ meal_items : has
+  foods ||--o{ meal_items : referenced_by
+
+  profiles {
+    uuid id PK FK "-> auth.users.id"
+    text username
+    text full_name
+    text avatar_url
+    timestamptz created_at
+  }
+
+  daily_logs {
+    uuid id PK
+    uuid user_id FK
+    date log_date
+    int total_calories
+    int protein_g
+    int carbs_g
+    int fat_g
+    unique(user_id, log_date)
+  }
+
+  meals {
+    uuid id PK
+    uuid user_id FK
+    uuid log_id FK "-> daily_logs.id"
+    text meal_type
+    text note
+    timestamptz created_at
+  }
+
+  foods {
+    uuid id PK
+    uuid owner_id FK "nullable (global)"
+    text name
+    text brand
+    text serving_unit
+    numeric serving_qty
+    int calories_per_serving
+    bool is_public
+    timestamptz created_at
+  }
+
+  meal_items {
+    uuid id PK
+    uuid meal_id FK
+    uuid food_id FK
+    numeric qty
+    int calories_total
+  }
+
+  water_intake {
+    uuid id PK
+    uuid user_id FK
+    date log_date
+    int ml
+  }
+
+  sleep_logs {
+    uuid id PK
+    uuid user_id FK
+    date date_on
+    time bedtime
+    time wake_time
+    numeric total_sleep_hours
+    int quality_score
+    text note
+    unique(user_id, date_on)
+  }
