@@ -43,12 +43,12 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50/40 to-teal-50/30 flex items-center justify-center px-4">
+    <main className="min-h-screen bg-linear-to-br from-green-50 via-emerald-50/40 to-teal-50/30 flex items-center justify-center px-4">
       <div className="w-full max-w-4xl bg-white/80 backdrop-blur-xl shadow-xl rounded-3xl border border-emerald-100 grid md:grid-cols-2 overflow-hidden">
         {/* Левая часть - картинка/текст, только на md+ */}
-        <div className="bg-gradient-to-br from-emerald-100 via-emerald-50 to-white p-8 md:p-10 hidden md:flex flex-col justify-between">
+        <div className="bg-linear-to-br from-emerald-100 via-emerald-50 to-white p-8 md:p-10 hidden md:flex flex-col justify-between">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-emerald-700 shadow-sm mb-4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-emerald-700 shadow-xs mb-4">
               <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" />
               Wellness Tracker
             </div>
@@ -87,7 +87,7 @@ export default function LoginPage() {
               </Button>
               <Button
                 variant="outline"
-                className="h-7 px-3 text-xs rounded-full border-0 bg-white shadow"
+                className="h-7 px-3 text-xs rounded-full border-0 bg-white shadow-sm"
               >
                 Log in
               </Button>

@@ -11,12 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50/30 to-teal-50/20">
+      <body className="min-h-screen bg-linear-to-br from-green-50 via-emerald-50/30 to-teal-50/20">
         {/* Навбар */}
         <header className="sticky top-0 z-10 bg-white/80 backdrop-blur-lg border-b border-green-100/50 shadow-lg shadow-green-100/20">
           <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl shadow-lg shadow-green-300/40">
+              <div className="p-2.5 bg-linear-to-br from-green-400 to-emerald-500 rounded-2xl shadow-lg shadow-green-300/40">
                 <span className="text-white text-lg font-semibold">W</span>
               </div>
               <div>
@@ -30,19 +30,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <nav className="flex gap-2 text-sm">
               <Link
                 href="/"
-                className="px-4 py-2 rounded-full border border-green-200/60 text-green-700 hover:bg-green-50 hover:border-green-300 shadow-sm hover:shadow-md transition-all duration-200"
+                className="px-4 py-2 rounded-full border border-green-200/60 text-green-700 hover:bg-green-50 hover:border-green-300 shadow-xs hover:shadow-md transition-all duration-200"
               >
                 Home
               </Link>
               <Link
                 href="/dashboard"
-                className="px-4 py-2 rounded-full border border-green-200/60 text-green-700 hover:bg-green-50 hover:border-green-300 shadow-sm hover:shadow-md transition-all duration-200"
+                className="px-4 py-2 rounded-full border border-green-200/60 text-green-700 hover:bg-green-50 hover:border-green-300 shadow-xs hover:shadow-md transition-all duration-200"
               >
                 Dashboard
               </Link>
               <Link
                 href="/login"
-                className="px-4 py-2 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 text-white shadow-lg shadow-green-300/40 hover:shadow-xl hover:shadow-green-400/50 transition-all duration-200"
+                className="px-4 py-2 rounded-full bg-linear-to-br from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 text-white shadow-lg shadow-green-300/40 hover:shadow-xl hover:shadow-green-400/50 transition-all duration-200"
               >
                 Sign in
               </Link>

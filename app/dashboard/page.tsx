@@ -47,7 +47,7 @@ export default async function DashboardPage() {
 
   return (
     <main className="max-w-4xl mx-auto py-10 px-4 space-y-8">
-      <section className="bg-white shadow-sm rounded-2xl p-6 border border-emerald-100">
+      <section className="bg-white shadow-xs rounded-2xl p-6 border border-emerald-100">
         <h1 className="text-2xl font-semibold mb-2">
           WellBalance • Dashboard
         </h1>
@@ -57,7 +57,7 @@ export default async function DashboardPage() {
       </section>
 
       {/* Форма Add food */}
-      <section className="bg-white shadow-sm rounded-2xl p-6 border border-emerald-100">
+      <section className="bg-white shadow-xs rounded-2xl p-6 border border-emerald-100">
         <h2 className="text-lg font-semibold mb-4">Add food</h2>
         <form action={addFood} className="flex flex-col sm:flex-row gap-3">
           <input
@@ -84,7 +84,7 @@ export default async function DashboardPage() {
       </section>
 
       {/* Список foods */}
-      <section className="bg-white shadow-sm rounded-2xl p-6 border border-emerald-100">
+      <section className="bg-white shadow-xs rounded-2xl p-6 border border-emerald-100">
         <h2 className="text-lg font-semibold mb-4">Your foods</h2>
 
         {error && (

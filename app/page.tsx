@@ -55,14 +55,14 @@ const tools = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50/40 to-teal-50/30">
+    <div className="min-h-screen bg-linear-to-br from-green-50 via-emerald-50/40 to-teal-50/30">
       {/* декоративные пятна фона */}
-      <div className="pointer-events-none fixed inset-y-0 right-0 w-80 translate-x-1/3 bg-gradient-to-bl from-emerald-200/40 to-transparent blur-3xl" />
-      <div className="pointer-events-none fixed inset-y-0 left-0 w-80 -translate-x-1/3 bg-gradient-to-tr from-teal-200/40 to-transparent blur-3xl" />
+      <div className="pointer-events-none fixed inset-y-0 right-0 w-80 translate-x-1/3 bg-linear-to-bl from-emerald-200/40 to-transparent blur-3xl" />
+      <div className="pointer-events-none fixed inset-y-0 left-0 w-80 -translate-x-1/3 bg-linear-to-tr from-teal-200/40 to-transparent blur-3xl" />
 
       <main className="relative mx-auto flex max-w-5xl flex-col gap-8 px-4 pb-16 pt-10 sm:px-6 lg:px-8">
         {/* Hero / welcome card */}
-        <section className="overflow-hidden rounded-3xl bg-white/80 shadow-xl shadow-emerald-100/60 ring-1 ring-emerald-100 backdrop-blur">
+        <section className="overflow-hidden rounded-3xl bg-white/80 shadow-xl shadow-emerald-100/60 ring-1 ring-emerald-100 backdrop-blur-sm">
           <div className="grid gap-6 p-6 sm:grid-cols-[minmax(0,1.6fr)_minmax(0,1.2fr)] sm:p-8">
             <div className="flex flex-col justify-between gap-4">
               <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
@@ -83,7 +83,7 @@ export default function HomePage() {
               <div>
                 <Link
                   href="/dashboard"
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-green-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-300/50 transition hover:shadow-emerald-400/60"
+                  className="inline-flex items-center justify-center rounded-full bg-linear-to-r from-emerald-500 to-green-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-300/50 transition hover:shadow-emerald-400/60"
                 >
                   View Dashboard
                 </Link>
@@ -92,7 +92,7 @@ export default function HomePage() {
 
             {/* картинка-заглушка */}
             <div className="relative">
-              <div className="h-full w-full rounded-2xl bg-gradient-to-br from-emerald-100 via-green-100 to-emerald-50 p-1">
+              <div className="h-full w-full rounded-2xl bg-linear-to-br from-emerald-100 via-green-100 to-emerald-50 p-1">
                 <div className="flex h-full items-center justify-center rounded-2xl bg-[url('https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=1200')] bg-cover bg-center" />
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function HomePage() {
             {quickStats.map((stat) => (
               <div
                 key={stat.id}
-                className="rounded-2xl bg-white/80 p-4 shadow-sm shadow-emerald-100 ring-1 ring-emerald-100/70 backdrop-blur"
+                className="rounded-2xl bg-white/80 p-4 shadow-xs shadow-emerald-100 ring-1 ring-emerald-100/70 backdrop-blur-sm"
               >
                 <p className="text-xs font-medium text-slate-500">
                   {stat.label}
@@ -140,9 +140,9 @@ export default function HomePage() {
             {tools.map((tool) => (
               <div
                 key={tool.id}
-                className="flex flex-col rounded-2xl bg-white/90 p-4 shadow-md shadow-emerald-100 ring-1 ring-emerald-100/70 backdrop-blur"
+                className="flex flex-col rounded-2xl bg-white/90 p-4 shadow-md shadow-emerald-100 ring-1 ring-emerald-100/70 backdrop-blur-sm"
               >
-                <div className="mb-3 h-1.5 w-14 rounded-full bg-gradient-to-r from-emerald-300 to-green-300" />
+                <div className="mb-3 h-1.5 w-14 rounded-full bg-linear-to-r from-emerald-300 to-green-300" />
                 <h3 className="text-sm font-semibold text-slate-900">
                   {tool.title}
                 </h3>
@@ -151,7 +151,7 @@ export default function HomePage() {
                 </p>
                 <Link
                   href={tool.href}
-                  className={`mt-4 inline-flex items-center justify-center rounded-full bg-gradient-to-r ${tool.color} px-4 py-2 text-xs font-semibold text-white shadow-md shadow-emerald-200/70 transition hover:shadow-lg`}
+                  className={`mt-4 inline-flex items-center justify-center rounded-full bg-linear-to-r ${tool.color} px-4 py-2 text-xs font-semibold text-white shadow-md shadow-emerald-200/70 transition hover:shadow-lg`}
                 >
                   {tool.button}
                 </Link>
