@@ -2,14 +2,13 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createClient } from '@supabase/supabase-js';
+
+import { supabaseBrowser } from '@/lib/supabaseBrowser';
+
+
 import { Button } from '../../components/ui/button';
 import { Input } from '../../components/ui/input';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
 
 export default function LoginPage() {
   const router = useRouter();
@@ -25,7 +24,8 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      const { error } = await supabaseBrowser.auth.signInWithPassword({
+
         email,
         password,
       });

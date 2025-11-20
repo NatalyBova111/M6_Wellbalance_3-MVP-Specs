@@ -38,7 +38,7 @@ function mapMacroToCategory(macro: string | null): FoodCategory | null {
 
 
 export default async function MealsPage() {
-  const supabase = createSupabaseServer();
+  const supabase = await createSupabaseServer();
 
   const { data, error } = await supabase
     .from("foods")

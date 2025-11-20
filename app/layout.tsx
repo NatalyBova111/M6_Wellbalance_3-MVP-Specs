@@ -1,11 +1,12 @@
 // app/layout.tsx
 import "./globals.css";
-import Link from 'next/link';
-import type { ReactNode } from 'react';
+import Link from "next/link";
+import type { ReactNode } from "react";
+import { NavAuthButtons } from "../components/NavAuthButtons";
 
 export const metadata = {
-  title: 'WellBalance',
-  description: 'Wellness tracker',
+  title: "WellBalance",
+  description: "Wellness tracker",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -40,12 +41,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               >
                 Dashboard
               </Link>
-              <Link
-                href="/login"
-                className="px-4 py-2 rounded-full bg-linear-to-br from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 text-white shadow-lg shadow-green-300/40 hover:shadow-xl hover:shadow-green-400/50 transition-all duration-200"
-              >
-                Sign in
-              </Link>
+<Link
+  href="/profile"
+  className="px-4 py-2 rounded-full border border-green-200/60 text-green-700 hover:bg-green-50 hover:border-green-300 shadow-xs hover:shadow-md transition-all duration-200"
+>
+  Profile
+</Link>
+
+              {/* Здесь умная кнопка Sign in / Logout */}
+              <NavAuthButtons />
             </nav>
           </div>
         </header>

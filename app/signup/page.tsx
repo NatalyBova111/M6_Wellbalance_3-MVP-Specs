@@ -2,14 +2,14 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createClient } from '@supabase/supabase-js';
+
 import { Button } from '../../components/ui/button';
 import { Input } from '../../components/ui/input';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+
+import { supabaseBrowser } from '@/lib/supabaseBrowser';
+
+
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -32,7 +32,7 @@ export default function SignUpPage() {
         (process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000') +
         '/auth/callback';
 
-      const { error } = await supabase.auth.signUp({
+      const { error } = await supabaseBrowser.auth.signUp({
         email,
         password,
         options: {

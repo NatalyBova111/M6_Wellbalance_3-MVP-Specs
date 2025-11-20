@@ -127,3 +127,12 @@ insert into public.foods (owner_id, name, brand, serving_unit, serving_qty, calo
   (null,'Brown Rice (cooked)','Generic','g',100,112,true),
   (null,'Avocado','Generic','g',100,160,true)
 on conflict do nothing;
+
+create table if not exists public.user_targets (
+  user_id uuid primary key references auth.users(id) on delete cascade,
+  daily_calories int4 not null default 2000,
+  protein_g int4 not null default 120,
+  carbs_g int4 not null default 200,
+  fat_g int4 not null default 60,
+  updated_at timestamptz not null default now()
+);
